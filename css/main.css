@@ -1280,7 +1280,7 @@ pre .javascript .function {
 .posts-expand {
   padding-top: 40px;
 }
-@media (max-width: 1080px) {
+@media (max-width: 767px) {
   .posts-expand {
     margin: 0 20px;
   }
@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dd3e3c;
+  background: #e9ff61;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2669,7 +2669,7 @@ pre .javascript .function {
   }
 }
 .container .main-inner {
-  width: 1180px;
+  width: 1080px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2728,7 +2728,7 @@ pre .javascript .function {
   display: none;
 }
 .footer-inner {
-  width: 1180px;
+  width: 1080px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
