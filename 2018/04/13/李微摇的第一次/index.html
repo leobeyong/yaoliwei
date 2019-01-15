@@ -123,6 +123,21 @@
 
 
 
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 
 
   <title> | Yaoliwei'Space</title>
@@ -200,20 +215,20 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/yaoliwei/读书笔记/" rel="section">
+        <li class="menu-item menu-item-book">
+          <a href="/yaoliwei/book/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-读书笔记"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             读书笔记
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/yaoliwei/设计分析/" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/yaoliwei/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-设计分析"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             设计分析
           </a>
@@ -407,7 +422,7 @@
                 alt="姚力玮" />
             
               <p class="site-author-name" itemprop="name">姚力玮</p>
-              <p class="site-description motion-element" itemprop="description">初出茅庐的交互设计师</p>
+              <p class="site-description motion-element" itemprop="description">UE/UX设计师</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -431,6 +446,22 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liwei_yao@foxmail.com" target="_blank" title="Foxmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Foxmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yao-li-wei-91/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -474,7 +505,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -484,15 +515,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
