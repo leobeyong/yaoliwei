@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/yaoliwei/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/yaoliwei/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/yaoliwei/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/yaoliwei/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/yaoliwei/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/yaoliwei/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/yaoliwei/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言刚刚毕业不到1年，感觉自己每次做完东西之后没有进行总结和个人分析，东西很快就忘记了，自己没有真正地掌握一样，所以就自己抽取时间对自己做的东西进行一下个人分析，这是我的第一次总结分析，有很多东西肯定剖析不到位，有什么问题的希望大家可以多多指教，关注一">
+<meta name="keywords" content="设计分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页码切换设计分析">
+<meta property="og:url" content="https://leobeyong.github.io/yaoliwei/2018/04/27/页码切换设计分析/index.html">
+<meta property="og:site_name" content="Leoyao Design">
+<meta property="og:description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言刚刚毕业不到1年，感觉自己每次做完东西之后没有进行总结和个人分析，东西很快就忘记了，自己没有真正地掌握一样，所以就自己抽取时间对自己做的东西进行一下个人分析，这是我的第一次总结分析，有很多东西肯定剖析不到位，有什么问题的希望大家可以多多指教，关注一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/quanbuanli.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/zhihugerenzhongxin.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/google1.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/google2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/douban.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/tianmao.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jingdong.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jinritoutiao.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/zhihujiazai.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/googleanalysis.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/doubananalysis.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/tianmaoanalysis.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/uichinaanalysis.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/tianmaoanalysis2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/zhankuanalysis.jpg">
+<meta property="og:updated_time" content="2019-01-29T08:23:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="页码切换设计分析">
+<meta name="twitter:description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言刚刚毕业不到1年，感觉自己每次做完东西之后没有进行总结和个人分析，东西很快就忘记了，自己没有真正地掌握一样，所以就自己抽取时间对自己做的东西进行一下个人分析，这是我的第一次总结分析，有很多东西肯定剖析不到位，有什么问题的希望大家可以多多指教，关注一">
+<meta name="twitter:image" content="https://leobeyong.github.io/yaoliwei/images/quanbuanli.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/yaoliwei/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://leobeyong.github.io/yaoliwei/2018/04/27/页码切换设计分析/"/>
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <title>页码切换设计分析 | Leoyao Design</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/yaoliwei/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leoyao Design</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/yaoliwei/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/yaoliwei/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/yaoliwei/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书笔记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/yaoliwei/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            文章分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://leobeyong.github.io/yaoliwei/yaoliwei/2018/04/27/页码切换设计分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="姚力玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/yaoliwei/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leoyao Design">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">页码切换设计分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T19:31:37+08:00">
+                2018.04.27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/yaoliwei/categories/设计分析/" itemprop="url" rel="index">
+                    <span itemprop="name">设计分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」</em><br>以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>刚刚毕业不到1年，感觉自己每次做完东西之后没有进行总结和个人分析，东西很快就忘记了，自己没有真正地掌握一样，所以就自己抽取时间对自己做的东西进行一下个人分析，这是我的第一次总结分析，有很多东西肯定剖析不到位，有什么问题的希望大家可以多多指教，关注一下我的知乎帐号（姚力玮，交互设计师），我们一起交流交流。</p>
+<p>页码很多情况下我们都会看到，尤其是PC端，很多设计都少不了页码。可是在这些需要页码设计的场景中，大家有没有发现很多网站中的页码设计都各有各的特点，设计出来的功能都不一样，如果抛开UI设计层面的东西，不分析整个网站的用色风格，到底网页端页码设计有没有规则呢？这个我还真的不知道有没有规则，但是我觉得如果站在产品端与用户端去思考一下问题，还是有一定规则的，下面我就根据我所见到的大多数页码设计进行个人分析。<br>我觉得所有的设计，都需要定义清楚我们产品的使用人群是谁，他们在什么场景下使用，我们的产品是为他们提供什么样的价值，只要抓准了这些，产品都不会差到哪里去。</p>
+<h2 id="全部页码展示型"><a href="#全部页码展示型" class="headerlink" title="全部页码展示型"></a>全部页码展示型</h2><p><em>（这个是我自己命名的，就是一共有多少内容，就全部标出页码，用户可以直接切换到最后一页）</em></p>
+<p><img src="/yaoliwei/images/quanbuanli.jpg" alt="头像"><br>经常见到的有个人中心设计，内容网站</p>
+<h3 id="知乎（个人中心）"><a href="#知乎（个人中心）" class="headerlink" title="知乎（个人中心）"></a>知乎（个人中心）</h3><p><img src="/yaoliwei/images/zhihugerenzhongxin.jpg" alt="头像"> </p>
+<p>用户角度分析：<br>个人中心的内容纯属个人历史记录，成就记录，说白一点也是个人价值的沉淀，展示自己一共有多少页内容，有多少条数据，给用户的自我感觉很优越，很有成就感。从心理层面，用户需要知道自己有多少内容，这样的场景，全部页面展示是最好的设计</p>
+<p>另外一个角度想，这个用户可以快速找到自己的内容，就假想一个场景：我发表了200篇文章，我想找其中的一篇，具体名字我忘了，具体哪一天我也忘了，可是我记得发表得比较早，这种情况下我会直接点击最后一页，再慢慢往回翻页查找，这样的设计完胜“顺序展示型（下面有讲）”设计。但是如果用户记得大概再中间时间发的，点击翻页去查找，知乎这样的设计查找起来用户想死的心都有了，不过这样的场景很少见，可是我们也不排除，所以这里加一个搜索或者跳转到“第几页”就很完美了。</p>
+<h2 id="顺序展示型"><a href="#顺序展示型" class="headerlink" title="顺序展示型"></a>顺序展示型</h2><p><em>（现在很多都直接用“加载更多”替代，这个是我自己命名的，只展示前面的几页，只支持按照一定的顺序翻页）</em></p>
+<h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3><p><img src="/yaoliwei/images/google1.jpg" alt="头像"> </p>
+<p>用户角度分析：<br>搜索的行为主体是用户，用户搜索了之后你算法要给出准确的答案，精准的结果，所以前面几页的结果也是极其重要的。<br>再者，用户对于搜索的结果基本就是刷前面几页的，都是按顺序翻看下一页查找自己想要的东西，对于你搜索出来的结果有多少页，用户根本就不care，如果用户搜索之后，在前几页没有得到自己想要的结果就直接退出或者换关键词搜索了，不会再做过多的停留。所以这样的场景就应该做简洁的设计，根据用户的场景习惯只给用户展示前面几页页码就行了，不要做太过复杂的功能，功能多了跟用户的使用场景不服反而可能会是一件坏事。<br>产品角度分析：<br>搜索结果的准确性及其重要，决定着产品的好坏，如果搜索结果不是用户想要的，就会给用户极差的体验，甚至导致用户的流失，前几页才是关键，你有多少搜索结果，用户根本就不关心。<br>所以，要洞悉用户的核心需求是什么，根据用户的核心需求做功能，功能多了不一定是好事。这样的场景就要适当做减法，这样的设计就足以满足用户99%的需求了。<br>另外，产品也需要向用户呈现自己产品的价值与推广自己的品牌，所以谷歌就把自己的logo与页码进行结合，给用户更加深刻的影响，提高社会公众辨识</p>
+<p><img src="/yaoliwei/images/google2.jpg" alt="头像"> </p>
+<h3 id="豆瓣"><a href="#豆瓣" class="headerlink" title="豆瓣"></a>豆瓣</h3><p><img src="/yaoliwei/images/douban.jpg" alt="头像"> </p>
+<p>站在用户的角度：<br>豆瓣首页的内容很庞杂，汇集了很多用户的东西，对于个别用户来说，他是不知道那个东西是他真正需要的，那个内容是好的，全部内容都是平台热门精选的，用户都是懒惰的，不会再做复杂的过滤塞选，所以这样的场景采用这样的设计就OK了。（但是我觉得豆瓣完全可以采用知乎那种加载更多去代替页码设计）</p>
+<h3 id="天猫"><a href="#天猫" class="headerlink" title="天猫"></a>天猫</h3><p><img src="/yaoliwei/images/tianmao.jpg" alt="头像"> </p>
+<h3 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h3><p><img src="/yaoliwei/images/jingdong.jpg" alt="头像"> </p>
+<p>产品角度分析：<br>电商网站服务的是两部分人群，一个是商家，一个是用户。对于电商网站来讲，每一块位置都很宝贵，说白了都是钱，所以看到这些网站复杂也是很正常的。对于商家，如果在商品页面，不采用页码跳转，对商家不是很公平，如果商铺排在非常后面，那基本就没有人买东西了，所以这也是为什么那么商家刷订单的原因了，就是要刷到前面去。<br>另外为什么这里支持页码跳转呢？一方面是对商家来说可以公平一点，另一方面对个体用户来说，也是有这个场景需求的，用户去搜索购买东西的时候，都会进行大量的相似产品对比的，人都是有贪小便宜的小毛病，就是货比三家，再做决定购买那个。这个跟Google的搜索结果基本一样，我们买东西都以一页一页地往下刷，基本不会跳页的。另外，当搜索的结果很多的时候，用户想看中间页码的产品，这个支持跳转到“第几页”就很合理了，虽然这个场景也很鸡肋。不过我觉得这个是对商家最好的，不会说店铺处于中间的尴尬位置，起码提供的功能让用户立刻跳转到自己的店铺。</p>
+<h3 id="今日头条"><a href="#今日头条" class="headerlink" title="今日头条"></a>今日头条</h3><p><img src="/yaoliwei/images/jinritoutiao.jpg" alt="头像"> </p>
+<h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h3><p><img src="/yaoliwei/images/zhihujiazai.jpg" alt="头像"> </p>
+<p>知乎跟今日头条都不采用页码设计，直接采用加载跟多，默认自己加载，给用户带来快速浏览内容的快感，减少用户的自我操作，体验更加爽。<br>其实知乎与今日头条本质上跟谷歌的页码设计原则应该是一样的，但是知乎与今日头条抓住了用户可逆性极小的场景去设计，内容型的网站，用户都是瀑布流的形式去预览，看到自己感兴趣的就点进去预览，不感兴趣的就直接跳过，基本不会返回看的。用户的当前页面感知度很低，一直沉浸在当前内容中。<br>谷歌，百度这样的搜索结果就不一样，对于搜索出来的结果，用户都是点开看前面几个，越后面的结果越不可能查看，搜索的结果都是相关联的，用户都会进行一定的对比，看那个答案更优，最终会返回头选择那个最优答案，所以这样的场景用户的回头翻看几率大很多，页码设计就是给用户一个准确的定位，用户可以很快返回到自己想到的页面，快速找到自己想要的内容。</p>
+<p>「说完了大体的，我再做一下稍微的细节分析」<br>到底页码设计怎样才合理</p>
+<h2 id="合理性分析"><a href="#合理性分析" class="headerlink" title="合理性分析"></a>合理性分析</h2><p>Google<br><img src="/yaoliwei/images/googleanalysis.jpg" alt="头像"> </p>
+<p>豆瓣<br><img src="/yaoliwei/images/doubananalysis.jpg" alt="头像"> </p>
+<p>天猫<br><img src="/yaoliwei/images/tianmaoanalysis.jpg" alt="头像"> </p>
+<p>UI中国<br><img src="/yaoliwei/images/uichinaanalysis.jpg" alt="头像"> </p>
+<p>上下页的切换，就以这4个为例，Google就是简单的“上一页”“下一页”，而豆瓣和天猫还加了指示箭头，更加直观，UI中国就果断只采用箭头。那他们这样设计有什么区别呢？其实区别不是很大，但是如果去细抠，我觉得Google的设计是最好的。<br>有了文案“上一页”“下一页”这个已经很明确了该按钮的功能，加箭头是有点多余。豆瓣采用“前页”“后页”给用户的认知会有偏差，用户会疑惑这个“前页”到底是前一页还是最前页？所以这个“一”字我觉得不能去掉，少了一个“一”字就会造成一定的疑惑，交互设计除了给用户感知，还需要下一步的可预知，文案也需要准确表达意思，不能让用户进行思考“don’t make me think”。UI中国直接用icon，对与小白用户就需要一定的思考，不过现在这个设计已经很普遍了，用户对这个icon的认知是可以的，所以问题不是很大。<br>对于一些做设计的朋友来说，都用文字，简直不可接受，所以现在很多的网站（尤其是设计网站）都会采用icon的形式，这样会更加好看，也会更加简洁。可是这个设计绝对不是最佳的。</p>
+<p>天猫<br><img src="/yaoliwei/images/tianmaoanalysis2.jpg" alt="头像"> </p>
+<p>站酷<br><img src="/yaoliwei/images/zhankuanalysis.jpg" alt="头像"> </p>
+<p>再看看这个，当用户切换到中间页面的时候，前面的页面，保留第一页或者前两页的作用是一样的，就是提供用户快速回到第一页的入口，其实我觉得保留几页都没多大区别，主要目的就是让用户快速回到第一页。天猫的内容量很大，一般天猫自己优化的列表前两页基本上就能够满足用户的选择了，所以做了两个按钮。依然考虑到量大希望多做展示，所以当前页前后放出了五个页码，且一般用户都是不断往后翻，而且天猫认为最后面一页的用处并不大，所以非常干脆的省略掉最后一页这个按钮。并直接告知一共多少页，可以让用户估算还有多少个商品可供挑选，并让用户自己去跳转到制定页面。<br>不过具体保留多少页，就真的需要看产品的定位和用户群体了，不同的用户群体，不用的使用场景，会导致设计不一样的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>做设计我一般会思考几个问题<br>我们的产品用户是谁？<br>他们在什么场景下面使用我们的产品？<br>用户为什么要来到这里？<br>他为什么要使用这个功能？<br>我这样设计能不能解决他们的问题？<br>我再做简化，会不会影响用户的使用？<br>只要详细思考了这几个问题，我才会做最终的设计稿。</p>
+
+      
+
+
+    </div>
+    
+    
+    
+
+
+    
+
+    
+          		<div>
+    
+        <div style="text-align:center;color: #807272;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+          	
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创，谢谢支持</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/yaoliwei/images/wechatpay.jpg" alt="姚力玮 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    姚力玮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://leobeyong.github.io/yaoliwei/2018/04/27/页码切换设计分析/" title="页码切换设计分析">https://leobeyong.github.io/yaoliwei/2018/04/27/页码切换设计分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/yaoliwei/tags/设计分析/" rel="tag"># 设计分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/yaoliwei/2018/05/17/扫码登录哪些事/" rel="prev" title="手机扫码登录那些事">
+                手机扫码登录那些事 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/yaoliwei/images/avatar.gif"
+                alt="姚力玮" />
+            
+              <p class="site-author-name" itemprop="name">姚力玮</p>
+              <p class="site-description motion-element" itemprop="description">UE/UX设计师</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/yaoliwei/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/yaoliwei/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liwei_yao@foxmail.com" target="_blank" title="Foxmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Foxmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yao-li-wei-91/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全部页码展示型"><span class="nav-number">2.</span> <span class="nav-text">全部页码展示型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎（个人中心）"><span class="nav-number">2.1.</span> <span class="nav-text">知乎（个人中心）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序展示型"><span class="nav-number">3.</span> <span class="nav-text">顺序展示型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google"><span class="nav-number">3.1.</span> <span class="nav-text">Google</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#豆瓣"><span class="nav-number">3.2.</span> <span class="nav-text">豆瓣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天猫"><span class="nav-number">3.3.</span> <span class="nav-text">天猫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#京东"><span class="nav-number">3.4.</span> <span class="nav-text">京东</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日头条"><span class="nav-number">3.5.</span> <span class="nav-text">今日头条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎"><span class="nav-number">3.6.</span> <span class="nav-text">知乎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合理性分析"><span class="nav-number">4.</span> <span class="nav-text">合理性分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">姚力玮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/yaoliwei/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/yaoliwei/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

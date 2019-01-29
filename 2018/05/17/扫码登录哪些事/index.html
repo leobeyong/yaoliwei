@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/yaoliwei/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/yaoliwei/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/yaoliwei/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/yaoliwei/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/yaoliwei/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/yaoliwei/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/yaoliwei/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 （以下所有场景都是IMAC场景）不知道大家是否深有体会，很多情况下我们打开自己经常访问的网站，或者在自己电脑上面安装的客户端，经常退出了之后再次打开，都是默认打开扫码登录的页面，潜意识就叫我用手机扫码登录，害得我又要解锁手机，打开App，点击扫一扫，确">
+<meta name="keywords" content="设计分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机扫码登录那些事">
+<meta property="og:url" content="https://leobeyong.github.io/yaoliwei/2018/05/17/扫码登录哪些事/index.html">
+<meta property="og:site_name" content="Leoyao Design">
+<meta property="og:description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 （以下所有场景都是IMAC场景）不知道大家是否深有体会，很多情况下我们打开自己经常访问的网站，或者在自己电脑上面安装的客户端，经常退出了之后再次打开，都是默认打开扫码登录的页面，潜意识就叫我用手机扫码登录，害得我又要解锁手机，打开App，点击扫一扫，确">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/wechatlog.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/baidupan.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/kingdeepan.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/zhihu.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/xinlanweibo.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/yunzhijiaweb.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/yunzhijiakehu.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/qqkehu.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/dingdingweb.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/dingdingkehu.jpg">
+<meta property="og:updated_time" content="2019-01-29T08:24:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手机扫码登录那些事">
+<meta name="twitter:description" content="「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 （以下所有场景都是IMAC场景）不知道大家是否深有体会，很多情况下我们打开自己经常访问的网站，或者在自己电脑上面安装的客户端，经常退出了之后再次打开，都是默认打开扫码登录的页面，潜意识就叫我用手机扫码登录，害得我又要解锁手机，打开App，点击扫一扫，确">
+<meta name="twitter:image" content="https://leobeyong.github.io/yaoliwei/images/wechatlog.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/yaoliwei/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://leobeyong.github.io/yaoliwei/2018/05/17/扫码登录哪些事/"/>
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <title>手机扫码登录那些事 | Leoyao Design</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/yaoliwei/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leoyao Design</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/yaoliwei/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/yaoliwei/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/yaoliwei/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书笔记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/yaoliwei/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            文章分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://leobeyong.github.io/yaoliwei/yaoliwei/2018/05/17/扫码登录哪些事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="姚力玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/yaoliwei/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leoyao Design">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手机扫码登录那些事</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T19:31:37+08:00">
+                2018.05.17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/yaoliwei/categories/设计分析/" itemprop="url" rel="index">
+                    <span itemprop="name">设计分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」</em><br>以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人</p>
+<p>（以下所有场景都是IMAC场景）<br>不知道大家是否深有体会，很多情况下我们打开自己经常访问的网站，或者在自己电脑上面安装的客户端，经常退出了之后再次打开，都是默认打开扫码登录的页面，潜意识就叫我用手机扫码登录，害得我又要解锁手机，打开App，点击扫一扫，确定登录，一串很长的流程让我无比繁琐，可是TMD我有默认记住帐号密码啊，我还用手机扫码了，心理瞬间一万个草泥马。我还需要用手机去扫码登录吗？真TM傻的设计，把这个产品经理拉出来，我保证不打死他。<br>可是话说回来，并不是每个扫码登录的情况都让我讨厌，有些还是合理的，比如第三方帐号登录，这个是合理的。然而再冷静一点想想，产品这样做也是基于自己产品的定位与战略考虑的，可是这个就是牺牲了用户体验来达到自己产品战略的目的。<br>那接下来，我们就看看那些网站或者桌面客户端还是优先扫码登录的产品。</p>
+<h2 id="微信登录"><a href="#微信登录" class="headerlink" title="微信登录"></a>微信登录</h2><p>微信是我们最熟悉不过的一款App了，我们手机耗电最大的就微信了，我们每天都在接触微信，可是我们每次用电脑或者平板进行登录的时候，必须要我们用手机去扫码或者手机确认登录</p>
+<p><img src="/yaoliwei/images/wechatlog.jpg" alt="头像"> </p>
+<p>相信大家都遇到过这样的情况，很多人都觉得这个很不方便，更有甚者会骂是一个脑残的交互设计。站在我的角度想，微信这个设计的确是不合理的，因为我的很多使用场景都别受限了。</p>
+<p>例1：我经常在打王者荣耀的时候，突然微信有信息还TM带了表情，我需要看看是什么表情吧，而且是领导或者女朋友的信息，比较重要吧，TMD我又要暂停游戏返回微信进行回复，一返回游戏就死了，想用ipad去登录，还要手机扫码或者确定登录，一样要退出我的游戏，整个扫码过程耗时也不短。</p>
+<p>例2：微信聊得正high，手机没电了，打开我的电脑或者ipad登录一下微信，还需要我手机，瞬间觉得小龙哥有点傲气，就是这么任性，没有手机就是不给你登录。<br>其实我们有很多的使用场景都可以完全撇开扫码登录，直接帐号密码登录或者验证码登录即可。</p>
+<p>可是从微信的角度想想：<br>安全性与易用性一向都是矛盾的，可能微信真的秉承了实时实地的通讯，只有手机在身边，有网络才能是真正的实时通讯，所以微信主打手机端，而ipad还是需要wifi，不能实时通讯。另外微信的隐私程度还是挺高的，从一开始的熟人圈子做起，熟人的圈子隐私就是比较高，多设备同时打开，隐私泄露程度还是挺大的，所以手机都是可以控制非手机端的微信，可以直接锁定或者退出。我平时在公司一般都不会用电脑登录微信，都是手机登录，可能还是心理的隐私保护意识过强吧。<br>我个人对微信强制扫码登录的设计觉得不合理，可是手机可以控制非手机设备的微信状态这个非常认同，因为我们现在的微信圈子过于臃肿，形形色色的人都往微信里面塞，同事，朋友，亲戚都混在微信圈子里面，导致我们对微信越发陌生，渐渐地淡化了对朋友圈的好感，更有甚者很多人都不发朋友圈或者直接关闭了朋友圈的入口，微信关系圈从简单变得复杂，个人的行为都变得很谨慎与隐私，这个手机可控性很好保护自己的隐私安全。<br>微信的强制性手机扫码或者确定登录的最终出发点可能就是，最大程度保护用户的个人信息隐私安全，确定用户身份。</p>
+<h2 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a>百度网盘</h2><p>相信大家都有自己的百度网盘吧，可是我们每次打开网页的时候，很大的一个二维码在我们面前，我的第一反应就是想打开手机的百度网盘APP进行扫码，幸亏我是QQ帐号第三方登录的，所以就习惯性点击QQicon。</p>
+<p><img src="/yaoliwei/images/baidupan.jpg" alt="头像"> </p>
+<p>百度网盘很强调用百度APP进行扫码登录，其实也是在为百度APP拉用户量，这是在牺牲用户体验进行其他方面的商业收利。<br>另外：私人网盘最大的作用是解决存储问题，尤其是释放手机的内存。工作与生活中的图片，视频，文档我们都会存储到云盘中。云盘的作用除了释放我们的手机内存，还有个最大的作用就是实现资料的随时，随地多设备无缝衔接。<br>有些人会觉得扫码登录体验更好，自己记不得密码或者输入帐号密码很麻烦，网盘资料偏多，扫码登录会更加安全。<br>可是大家有没有发现，百度网盘的帐号密码登录是默认勾选“下次自动登录”，而且浏览器都有记住帐号密码功能，我们不需要自己再次输入帐号秘密的。所以百度网盘的扫码登录的最大目的是拉新，希望用户去下载APP。</p>
+<h2 id="金蝶企业云盘"><a href="#金蝶企业云盘" class="headerlink" title="金蝶企业云盘"></a>金蝶企业云盘</h2><p><img src="/yaoliwei/images/kingdeepan.jpg" alt="头像"> </p>
+<p>同样是云盘，站在用户角度，我觉得金蝶企业云盘就做得比百度好多了，金蝶企业云盘，（旧版）第一强调用户账号密码登录，二维码放在登录框下面，不需要用户自动切换，用户选择自己的登录方式。没有默认二维码优先登录。（新版）默认显示帐号密码登录优先，其次才是扫描登录。<br>我们普遍的场景都是，现在都是每个人都有自己的私人电脑，公司也会配置私人电脑，用户自己使用一台电脑，所以高端一点点的用户都会采用浏览器默认记者账号密码，用户登录只需要点击“登录”按钮就可以完成了，或者直接输入网址就进入了。<br>默认第一手机扫码登录简直就是耍流氓，严重诱导用户下载APP，潜移默化促使用户使用手机扫码登录，走一趟繁琐的流程。</p>
+<h2 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h2><p>知乎干脆扫码登录就做的更加弱化，二维码登录跟第三方平台快速登录一样平级。</p>
+<p><img src="/yaoliwei/images/zhihu.jpg" alt="头像"> </p>
+<h2 id="新浪微博"><a href="#新浪微博" class="headerlink" title="新浪微博"></a>新浪微博</h2><p>新浪微博也是默认账号密码登录，可是既然默认勾选了记住帐号与密码，二次登录的时候二维码登录叫做“安全登录”感觉就是有点不妥。<br>“安全登录”当用户没有记住帐号密码的时候还合理，可是当用户记住了账号密码后还叫“安全登录”就不太合理了。安全是相对的，用户要确定自己进行操作的时候才叫安全，可是你既然记住了用户的账号密码，非该用户打开新浪微博的网址发现有记住了某用户的账号密码，这还谈何安全登录。难道每个用户都很伟大，当看到不是自己的账号密码的时候就不去登录别人的账号了，那就绝对没有盗号了。</p>
+<p><img src="/yaoliwei/images/xinlanweibo.jpg" alt="头像"> </p>
+<h2 id="云之家"><a href="#云之家" class="headerlink" title="云之家"></a>云之家</h2><p>云之家是ToB中的ToC的产品，只有公司购买了云之家的员工才会用到，使用到云之家的用户对云之家也不会陌生。</p>
+<p><img src="/yaoliwei/images/yunzhijiaweb.jpg" alt="头像"> </p>
+<p>Web端的登录界面，云之家扫码登录优先，切换到账号登录，也没有默认勾选“7天内免登录”（帐号密码我是用浏览器记住的）。云之家对接的是企业，主打是办公场景，所以不默认勾选“7天内免登录”也是基于帐号安全性考虑，这个可以接受。可是如果说云之家的扫码登录也是为了让用户去下载云之家APP，我就觉得是扯淡了。相信用过云之家的用户都会用到签到这个功能，云之家是要打造一个移动办公场景，移动端是重点，我相信购买了云之家的公司，95%的都需要员工使用云之家进行签到，有签到这个硬性要求，还需要强调用户去下载APP吗？<br>另外，登录方式的icon我完全看不懂，鼠标移入的时候又没有告诉我是什么产品，体验不好。</p>
+<p><img src="/yaoliwei/images/yunzhijiakehu.jpg" alt="头像"> </p>
+<p>Imac客户端，一样是云之家扫码登录优先，而且这个界面存在的问题是，我一开始就以为只有一种扫码登录方式，可是仔细观察发现右上角有一个可点击的icon，可以切换到账号密码登录，我当时就很懵逼，其实采用icon设计没有问题，可是不同的用户对icon的认知不一样，需要用户去思考，去猜测你这个icon表达什么意思。icon设计没有直接文案“帐号登录”直观。<br>帐号密码登录界面，我一看总有一种很陌生的感觉，按理说，我们经常登录某个产品啊，怎么可能对登录窗口陌生呢！仔细看看这个登录窗口，是不是感觉少了“登录”按钮，“登录”按钮就是密码后面的箭头。我当时也一样很懵逼，使用Imac的朋友们可能会说我傻，没用使用过QQ似的，这个设计跟QQ差不多。基本就是在模仿QQ。可是真的是我傻吗？还是QQ的细节做到了极致？</p>
+<h2 id="QQ-imac客户端"><a href="#QQ-imac客户端" class="headerlink" title="QQ imac客户端"></a>QQ imac客户端</h2><p><img src="/yaoliwei/images/qqkehu.jpg" alt="头像"> </p>
+<p>QQ是默认账号密码优先登陆的，我们都习惯性默认记者账号密码，所以我们每次打开QQ的时候就习惯性按“enter键”或者直接鼠标点击“右箭头”登陆了。可是为什么QQ的“右箭头”我就留意到了，而云之家的我就没有留意呢？QQ的登陆界面做到了极简，登陆第一需求是快速登陆进入QQ，而不是在登陆框中寻找其他功能服务，QQ把记住密码、忘记密码、自动登陆、注册账号这些功能收了起来，所以对比QQ登陆界面与云之家的登陆界面，你会觉得云之家的登陆界面找不到重点，我没有第一时间知道“右箭头”是登陆的意思。<br>第二：二维码扫码界面，QQ非常直观，需要切换到账号登陆，就直接文字按钮，不需要用户任何的思考。从产品角度想，云之家也可能更加前调一下移动端的重要性，每次PC端登陆的时候都提醒一下用户手机端，把重点移到移动端（这个我不清楚，只是我的猜测）</p>
+<h2 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h2><p>同样的产品对比才有一定的说服力，钉钉跟云之家是竟品关系，都是ToB中的ToC产品，相对于云之家，钉钉的登陆做得更加智能，体验更加简单，更佳。</p>
+<p><img src="/yaoliwei/images/dingdingweb.jpg" alt="头像"> 以上两张图是钉钉网页版的登录界面</p>
+<p><img src="/yaoliwei/images/dingdingkehu.jpg" alt="头像"> 这两张是钉钉IMac客户端的登录界面</p>
+<p>对比分析，其实钉钉的网页端与IMca客户端的登录界面保持一致，给用户提供一模一样的体验感受。细看钉钉的登录界面除了采用文字直观表达信息外，好像也没什么不一样啊，我为什么说钉钉的登录体验更加智能，体验更加简单呢？<br>其实这个需要我们自己去体验才会有更真实的感受：<br>钉钉网页端或者IMac客户端，当你第一次打开登录界面的时候，钉钉是默认打开扫码登录界面的，因为你没有帐号密码信息的输入记录，可能你手机端是打开状态的，用户这个时候输入帐号密码的时间与操作流程跟手机扫码登录操作流程差距不是很大，也可能用户对自己帐号密码都很模糊的，这个时候提供扫码登录更佳。<br>当用户进行过帐号密码登录之后，用户下次打开登录，钉钉都是默认帐号密码登录优先，因为当用户进行了帐号密码登录之后，用户对自己的帐号密码肯定是很清新了，web端又有帐号密码记住功能，客户端也可以自动登录或者默认记住帐号的，这个时候用户再次进行登录的时候，直接输入密码登录的成本远远比扫码登录低很多。<br>钉钉就对用户的登录场景都拿捏得很准，很贴心的用户体验。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前面根据个人的观点分析了：微信web端，微信IMac客户端，百度网盘，金蝶企业网盘，知乎，新浪微博，云之家web端，云之家IMac客户端，QQIMac客户端，钉钉web端，钉钉IMac客户端的登录界面设计，其实每一个产品的登录设计都不能聚焦于个别控件，要从产品的定位，需要达到的目的，用户的诉求等因素综合考虑，在这里也没有否定任何一个产品的登录设计，只不过是以我个人的观点去分析了一下这些产品的登录界面设计，某个产品登录设计的存在一定有一定的目的与道理。</p>
+<p>要做好登录的体验设计，我们需要考虑的问题很多<br>场景：用户常用的设备是不是私人拥有？是上班环境用还是家里使用？<br>目的：登录框存在的目的是什么？是让用户快速登录进入产品？是想通过登录框增加用户对产品的认知？强调移动端的重要性？<br>方式：解决的方式也很多，第三方平台登录，下次免登录，默认记住七天内自动登录等等。<br>产品的易用性与安全性一直都是相互矛盾的，最终的设计还是需要根据产品的定位，产品用户，使用的场景等因素去决定的，设计没有绝对的对与错，设计只要在合适的场景，合适的时间，解决用户的问题就是好设计。</p>
+
+      
+
+
+    </div>
+    
+    
+    
+
+
+    
+
+    
+          		<div>
+    
+        <div style="text-align:center;color: #807272;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+          	
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创，谢谢支持</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/yaoliwei/images/wechatpay.jpg" alt="姚力玮 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    姚力玮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://leobeyong.github.io/yaoliwei/2018/05/17/扫码登录哪些事/" title="手机扫码登录那些事">https://leobeyong.github.io/yaoliwei/2018/05/17/扫码登录哪些事/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/yaoliwei/tags/设计分析/" rel="tag"># 设计分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/yaoliwei/2018/04/27/页码切换设计分析/" rel="next" title="页码切换设计分析">
+                <i class="fa fa-chevron-left"></i> 页码切换设计分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/yaoliwei/images/avatar.gif"
+                alt="姚力玮" />
+            
+              <p class="site-author-name" itemprop="name">姚力玮</p>
+              <p class="site-description motion-element" itemprop="description">UE/UX设计师</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/yaoliwei/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/yaoliwei/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liwei_yao@foxmail.com" target="_blank" title="Foxmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Foxmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yao-li-wei-91/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#微信登录"><span class="nav-number">1.</span> <span class="nav-text">微信登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度网盘"><span class="nav-number">2.</span> <span class="nav-text">百度网盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金蝶企业云盘"><span class="nav-number">3.</span> <span class="nav-text">金蝶企业云盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知乎"><span class="nav-number">4.</span> <span class="nav-text">知乎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新浪微博"><span class="nav-number">5.</span> <span class="nav-text">新浪微博</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#云之家"><span class="nav-number">6.</span> <span class="nav-text">云之家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QQ-imac客户端"><span class="nav-number">7.</span> <span class="nav-text">QQ imac客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#钉钉"><span class="nav-number">8.</span> <span class="nav-text">钉钉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">姚力玮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/yaoliwei/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/yaoliwei/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
