@@ -188,7 +188,7 @@ body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
-  color: #666;
+  color: #555;
   background: #f5f7f9;
 }
 @media (max-width: 767px) {
@@ -486,7 +486,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
@@ -500,8 +500,8 @@ code {
   word-wrap: break-word;
   color: #555;
   background: #eee;
-  border-radius: 3px;
-  font-size: 13px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 pre {
   padding: 10px;
@@ -940,9 +940,9 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #666;
+  color: #555;
   background: #fff;
-  border: 2px solid #666;
+  border: 2px solid #555;
   text-decoration: none;
   border-radius: 2px;
   transition-property: background-color;
@@ -967,7 +967,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #666;
+  background: #555;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1287,6 +1287,13 @@ pre .javascript .function {
     padding-right: 10px;
   }
 }
+section .post-type-normal,
+.posts-expand .post-type-normal {
+  padding-top: 60px !important;
+}
+.post-type-normal {
+  padding-top: 25px !important;
+}
 @media (min-width: 992px) {
   .posts-expand .post-body {
     text-align: justify;
@@ -1497,7 +1504,7 @@ pre .javascript .function {
   font-size: 16px;
 }
 .posts-expand .post-meta {
-  margin: 3px 0 60px 0;
+  margin: 3px 0 40px 0;
   color: #999;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
@@ -1951,7 +1958,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1a2867;
+  background: #b8c690;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2985,7 +2992,7 @@ pre .javascript .function {
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
-  color: #666;
+  color: #555;
   background: #fff;
   box-shadow: initial;
   border-radius: initial;
