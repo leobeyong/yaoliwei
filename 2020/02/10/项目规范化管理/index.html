@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/yaoliwei/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/yaoliwei/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/yaoliwei/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/yaoliwei/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/yaoliwei/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/yaoliwei/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/yaoliwei/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="设计分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="原创作者：林志颖    发布人员：姚力玮「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言从“IOS13”正式发布起，预示着国内将掀起适配“深色模式”热潮。目前已有不少大厂完成了适配，例如优酷、爱奇艺、钉钉、豆瓣等，也包括处于内测状态的微信、淘宝。部分团队也分享了自己的适配经验，都面临相同的问题：">
+<meta name="keywords" content="设计分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目规范化管理-我们能做些什么？">
+<meta property="og:url" content="https://leobeyong.github.io/yaoliwei/2020/02/10/项目规范化管理/index.html">
+<meta property="og:site_name" content="Leoyao Design">
+<meta property="og:description" content="原创作者：林志颖    发布人员：姚力玮「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言从“IOS13”正式发布起，预示着国内将掀起适配“深色模式”热潮。目前已有不少大厂完成了适配，例如优酷、爱奇艺、钉钉、豆瓣等，也包括处于内测状态的微信、淘宝。部分团队也分享了自己的适配经验，都面临相同的问题：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/sezhiyuyihua.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/mingmingguize.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/shuxingjiegou.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/shuxingjiegou2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jichuzujian.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jichuzujian2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/diedaiqietu.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/diedailiucheng.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/tubiaoshangse.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/sezhiqiehuan.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jianbianseqiehuan.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jianbiankapian.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/jianbiankapian2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/qietuduibi.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/iosqietu.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/iosqietu2.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/iosqietu3.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/iosqietu4.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/iosqietu5.jpg">
+<meta property="og:image" content="https://leobeyong.github.io/yaoliwei/images/intheend.jpg">
+<meta property="og:updated_time" content="2020-02-21T13:38:08.055Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目规范化管理-我们能做些什么？">
+<meta name="twitter:description" content="原创作者：林志颖    发布人员：姚力玮「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人 前言从“IOS13”正式发布起，预示着国内将掀起适配“深色模式”热潮。目前已有不少大厂完成了适配，例如优酷、爱奇艺、钉钉、豆瓣等，也包括处于内测状态的微信、淘宝。部分团队也分享了自己的适配经验，都面临相同的问题：">
+<meta name="twitter:image" content="https://leobeyong.github.io/yaoliwei/images/sezhiyuyihua.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/yaoliwei/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://leobeyong.github.io/yaoliwei/2020/02/10/项目规范化管理/"/>
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 1px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <title>项目规范化管理-我们能做些什么？ | Leoyao Design</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/yaoliwei/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leoyao Design</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/yaoliwei/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/yaoliwei/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/yaoliwei/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书笔记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/yaoliwei/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            文章分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://leobeyong.github.io/yaoliwei/yaoliwei/2020/02/10/项目规范化管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="姚力玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/yaoliwei/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leoyao Design">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">项目规范化管理-我们能做些什么？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-10T10:43:03+08:00">
+                2020.02.10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/yaoliwei/categories/设计分析/" itemprop="url" rel="index">
+                    <span itemprop="name">设计分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原创作者：林志颖    发布人员：姚力玮<br><em>「本原创文章首发于个人博客网站，如需转载请联系本人，微信belive541。」</em><br>以下内容出于个人思考和结合他人文章分析，若有雷同侵权问题，请联系本人</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从“IOS13”正式发布起，预示着国内将掀起适配“深色模式”热潮。<br>目前已有不少大厂完成了适配，例如优酷、爱奇艺、钉钉、豆瓣等，也包括处于内测状态的微信、淘宝。<br>部分团队也分享了自己的适配经验，都面临相同的问题：“早期色值规范不健全，团队成员无法规范化使用色值等”。<br>适配“深色模式”在技术层面上并不难，主要难点在于需要检查所有新旧界面、各种状态场景的适配完成度。这是一个十分难熬的过程，熬的不仅仅是设计师，也包括开发、测试。<br>“深色模式”其实就是“项目规范化”的衍生，做好规范化，“深色模式”只是顺带的。反之早期项目越不规范，适配时间就越长，暴露出的问题也会越多。<br>大厂在“项目规范化”上都做不到完美，那么我们如何做好“项目规范化”？<br>( 本篇内容无任何参考，仅代表本人个人观点，请选择性阅读 )</p>
+<h2 id="项目规范化"><a href="#项目规范化" class="headerlink" title="项目规范化"></a>项目规范化</h2><p>当产品发展至一定规模时，应该着重考虑项目的稳定性与扩展性。常规的设计规范一般包括色值、字号、边距、常用控件等，这些仅仅只是视觉层面的规范，对于整个产品架构稳定性的帮助是微乎其微的。如果要适配“深色模式”或者一次全面的UI改版，这样的规范远远不够。<br>基于常规设计规范，我们应该去制定更多应用层面的设计规范，具体可细分为：色值语义化、组件颗粒化、资源高效化。<br>色值语义化  -  以口语化的命名取代以往十六进制色值命名方式，命名符合一定规律，便于管理和传播。<br>组件颗粒化  -  细化组件颗粒度，以基础组件来构成其它高级组件。<br>资源高效化  -  增加资源使用效率，控制产品体积。<br>一个优秀的规范能够让产品达到“牵一发而动全身”的状态，不仅可以缩减项目迭代周期，而且能够增加项目的可扩展性。</p>
+<h2 id="色值语义化"><a href="#色值语义化" class="headerlink" title="色值语义化"></a>色值语义化</h2><p>大部分设计规范是以十六进制来对色值命名的，例如 #000000、#FFFFFF 等，这种命名方式是不具备易读性。<br>部分设计师会以Black、White、Grey等词去表示黑白灰，这就是最基础色值语义化，用一个更容易传播的词去代表十六进制。<br>基于基础的语义化，我们可以以“作用域<em>作用对象</em>色值简称”这种阶级式命名方法来拓展命名：</p>
+<p><img src="/yaoliwei/images/sezhiyuyihua.jpg" alt="头像"> </p>
+<p>作用域作为一级命名，一般指代产品名、功能名、版本号等；<br>作用对象作为二级命名，一般指代字体、填充、背景等具体作用目标；<br>色值简称作为三级命名，例如Black、White、Grey等，只需要具备易读性即可。<br>根据这种阶级式命名，我们可以将色值根据具体用途转换为：</p>
+<p><img src="/yaoliwei/images/mingmingguize.jpg" alt="头像"> </p>
+<p>因为语义化源于程序员的圈子，程序员一般都以下划线的方式去分割命名，下划线也是各个平台都能识别的命名方式，我们设计师也可以用这种方式做到与开发统一。如果你非要用其它分割方式，只要与开发沟通好都是可以的。<br>作用域“common_”可以理解为公用的、基础的，其充当整个公司的基础色值规范。当有其它新项目时，可以单独开个分支，以“新项目_”作为作用域来制定新项目特有的部分色值规范。如果我需要修改基础色值规范里的某个色值，那么无论有多少个新项目，只要用到这个基础色值都能全部一起改掉，这就是上文提到的“牵一发动全身”的规范化效果，前提是每个设计师都能遵守这个色值规范。</p>
+<p><img src="/yaoliwei/images/shuxingjiegou.jpg" alt="头像"> </p>
+<p>既然是团队设计师都要遵守的色值规范，就需要有人专门负责色值的增删，保证规范分发的唯一性。色值的命名方式不是唯一的，可以根据每个项目具体的需求去调整。<br>色值规范需要遍及界面设计每一处，每一个脱离规范的色值都是今后视觉改版的隐患。</p>
+<h2 id="组件颗粒化"><a href="#组件颗粒化" class="headerlink" title="组件颗粒化"></a>组件颗粒化</h2><p>常规组件化是以一个具有完整功能的组件来制定的，例如按钮、标签栏、弹窗等组件，但这种组件化分方式并不是一个真正意义上的组件化。<br>界面基本组成元素可以概括为四类：色值、文字、形状、资源。同时它们也是所有组件的基本组成元素，我们可以封装这四类元素为基础组件，以基础组件来组合成更为复杂的复合组件或其它衍生组件：</p>
+<p><img src="/yaoliwei/images/shuxingjiegou2.jpg" alt="头像"> </p>
+<p>我们将常见的弹窗组件拆分成以下基础组件：</p>
+<p><img src="/yaoliwei/images/jichuzujian.jpg" alt="头像"> </p>
+<p>这些基础组件都不仅仅针对弹窗，而是遍及界面各处。所有组件都基于这四个基础组件，我们只需要管理好这这些基础组件，以搭积木的方式拼凑成其它复合组件，那么无论修改哪个基础组件，都能全局性同步所有其它组件，这就是真正的组件化。</p>
+<p><img src="/yaoliwei/images/jichuzujian2.jpg" alt="头像"> </p>
+<p>将这种组件化与上文的色值语义化相结合好，那么适配“深色模式”这种大工程，可能一周内就能完成。</p>
+<h2 id="资源高效化"><a href="#资源高效化" class="headerlink" title="资源高效化"></a>资源高效化</h2><h3 id="资源文档"><a href="#资源文档" class="headerlink" title="资源文档"></a>资源文档</h3><p>重名资源堆积应该是这个行业常态了。例如icon_close这种广泛使用的图标，项目文件里的重名数量一般不少于5个，所以开发经常会说：“这么多个关闭图标，长的都差不多，我随便选个用吧”。<br>设计师切图文件一般是跟着迭代项目文件走的，例如新开了“迭代A”项目文件，那么所有切图也会放在“迭代A”文件里，那么“迭代B、迭代C…”的切图也是如此。如何从这些散乱的文件里确认这个图标是否切过？为了省事，设计师一般会选择重新切一份，这就是重名资源堆积的原因。<br><img src="/yaoliwei/images/diedaiqietu.jpg" alt="头像"> </p>
+<p>为了解决这个问题，我们需要制定一个资源文档来管理这些图标、图片等资源。将所有的切图统一归纳在资源文档里，每次功能迭代后都更新该文档并同步到开发，保证资源的唯一性。</p>
+<p><img src="/yaoliwei/images/diedailiucheng.jpg" alt="头像"> </p>
+<p>资源文档更重要意义在于项目交接，把项目整理好再交付给别人，除了对自己负责，也对他人负责。<br>这应该是设计师最基本的素质吧？</p>
+<h3 id="图标上色"><a href="#图标上色" class="headerlink" title="图标上色"></a>图标上色</h3><p>通常图标需要有常态色和激活色两种状态，设计师需要提供两套切图：</p>
+<p><img src="/yaoliwei/images/tubiaoshangse.jpg" alt="头像"> </p>
+<p>我们可以把图标上色的事情交给开发来实现，这种方式设计师不仅能少切一套图，还能大幅度的减少产品体积。<br>上色的图片格式支持PNG和SVG，由于SVG本质是一段代码，且大小远远小于PNG，所以我更建议使用SVG格式。<br>这种上色方式仅支持单纯的色值切换，形态切换是无法实现的，也就是你还是需要切两套图。</p>
+<p><img src="/yaoliwei/images/sezhiqiehuan.jpg" alt="头像"> </p>
+<p>通常开发只愿意帮你实现纯色切换，因为渐变色会麻烦很多，实现的渐变很难还原设计稿。我建议这种复杂的图标还是切图实际些。</p>
+<p><img src="/yaoliwei/images/jianbianseqiehuan.jpg" alt="头像"> </p>
+<p>如果你的产品做过“主题换肤”功能，那你能真正感受到这种上色方式所提供的便利性。<br>所有平台都支持这种上色方式，这是我们统一多端图标的最好手段。</p>
+<h3 id="优化切图"><a href="#优化切图" class="headerlink" title="优化切图"></a>优化切图</h3><p>为了增加卡片细节，设计师一般会给纯色或渐变色卡片上叠加这种半透明纹理细节。部分设计师会将卡片整块切给开发，但是如果考虑切图大小，这种方式是不可取的。<br>下图为渐变卡片的切图大小：</p>
+<p><img src="/yaoliwei/images/jianbiankapian.jpg" alt="头像"> </p>
+<p>作为界面设计的主要方式之一，单张卡片切图88kb还是还是过大 (已经压缩处理)。<br>如果想继续压缩切图大小，我们可以让开发实现基础的矩形渐变，我们只切半透明纹理，那么切图由原来的的88压缩至10kb。</p>
+<p><img src="/yaoliwei/images/jianbiankapian2.jpg" alt="头像"> </p>
+<p>分层切图是优化切图大小的主要方法，收益值与产品规模成正比。<br>代码实现矩形渐变不仅压缩了产品体积，还能增加视觉调整的可控性，例如“主题换肤”功能。</p>
+<h3 id="等比设计"><a href="#等比设计" class="headerlink" title="等比设计"></a>等比设计</h3><p>在上一家公司工作期间，每当发布一款新产品，我都要将推广海报的主视觉延展至其它20个不同尺寸推广图，推广图投放渠道包括：APP、WEB、公众号、微博等。花费了一天多的时间来延展这20套尺寸，心里吐槽了不知道多少次：“推广图的尺寸真tm的多”。<br>排除其它外界的推广渠道，单论我们公司内部的推广图尺寸就有十多种，以至于我询问领导：“为什么早期推广位的尺寸设计不能按比例来？”。<br>得到的回复是：“历史遗留”。<br>不知道其他公司如何，但我经历的每家公司都存在这个现象。早期没人制定标准，以至于后期各种恶性循环。如果要减少后期工作量，图片的等比设计是多端统一的唯一方法。</p>
+<h3 id="关于倍图的思考"><a href="#关于倍图的思考" class="headerlink" title="关于倍图的思考"></a>关于倍图的思考</h3><p>IOS切图目前最高支持3x，而Android最高支持4x。由于早期设备已经淘汰，所以较低倍图可以不切。<br><img src="/yaoliwei/images/qietuduibi.jpg" alt="头像"> </p>
+<p>如果1x图可以不切，那么2x图也可以不切吗？只给3x图会怎样？(由于IOS、Android对图片的处理机制一样，所以只以IOS举例)</p>
+<p><img src="/yaoliwei/images/iosqietu.jpg" alt="头像"> </p>
+<p>我们先了解一下关于倍图，系统是如何处理它们的：<br>IOS默认提供三个预留槽，分别为：1x、2x、3x。开发只需要把对应倍率的图片放进去，系统会根据当前手机分辨率自动抓取对应倍率图片。</p>
+<p><img src="/yaoliwei/images/iosqietu2.jpg" alt="头像"> </p>
+<p>如果我们不提供1x图，但却用iphone4(1x)去预览界面，系统抓取不到1x图，会怎么处理？<br>系统会去调取2x图，根据对应倍率缩放生成1x图。<br><img src="/yaoliwei/images/iosqietu3.jpg" alt="头像"> </p>
+<p>同理，如果同时不提供1x、2x图，系统会去调取3x图，根据对应倍率缩放生成1x、2x图。<br><img src="/yaoliwei/images/iosqietu4.jpg" alt="头像"> </p>
+<p>如果不提供2x图，系统会优先向上查找，如果有3x图便调取，如果没有，就调取1x图。<br><img src="/yaoliwei/images/iosqietu5.jpg" alt="头像"> </p>
+<p>根据这个系统原理，其实我们可以只提供最高倍图，其它倍率由系统自己来生成，也就是所有切图只需要提供一套图了，那么产品的体积将会大幅度压缩，这是一个优化产品体积的极端手段。<br>有人会问，缩放出来的图片像素不对齐怎么办？<br>像素不对齐的情况确实会出现，如果你介意，图标相关的切图你可以保留原来的切图方式。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>设计师的职能不应该只停留在视觉层面，设计可以推动产品发展，我们更应该思考如何规范化管理项目。<br>如果一个项目没有任何规范，项目将会随着时间而暴露出各种细节问题，这是一个恶性循环的过程，以至于项目后期不得不投入成倍的人力成本来填坑。<br>规范化应该越早越好，我建议从项目的第一个界面开始。如果你认为：“规范化制定的时间过早，产品功能还未成形，不便于规范的制定”。你可能还没明白这篇文章在讲什么。<br>规范化可以提供给产品最大的功能扩展性，当处理具有全局性的需求时，能极大程度缩短迭代时间，例如“深色模式”。<br>关于项目管理，设计师能做的事远比想象中的多，加油，奥力给！</p>
+<p><img src="/yaoliwei/images/intheend.jpg" alt="头像"> </p>
+<p><em>「最后，特别感谢大明星（林志颖）愿意把自己的文章发布在这里。里面对UI设计，团队项目协作，团队效率的剖析也是挺深的，如果您进来开到这篇文章，希望对你有用」</em></p>
+
+      
+
+
+    </div>
+    
+    
+    
+
+
+    
+
+    
+          		<div>
+    
+        <div style="text-align:center;color: #807272;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+          	
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创，谢谢支持</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/yaoliwei/images/wechatpay.jpg" alt="姚力玮 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    姚力玮
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://leobeyong.github.io/yaoliwei/2020/02/10/项目规范化管理/" title="项目规范化管理-我们能做些什么？">https://leobeyong.github.io/yaoliwei/2020/02/10/项目规范化管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/yaoliwei/tags/设计分析/" rel="tag"># 设计分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/yaoliwei/2019/07/26/Leoyao移动端设计规范/" rel="next" title="Leoyao移动端设计规范">
+                <i class="fa fa-chevron-left"></i> Leoyao移动端设计规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/yaoliwei/images/avatar.gif"
+                alt="姚力玮" />
+            
+              <p class="site-author-name" itemprop="name">姚力玮</p>
+              <p class="site-description motion-element" itemprop="description">UE/UX设计师</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/yaoliwei/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/yaoliwei/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liwei_yao@foxmail.com" target="_blank" title="Foxmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Foxmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yao-li-wei-91/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目规范化"><span class="nav-number">2.</span> <span class="nav-text">项目规范化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色值语义化"><span class="nav-number">3.</span> <span class="nav-text">色值语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件颗粒化"><span class="nav-number">4.</span> <span class="nav-text">组件颗粒化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源高效化"><span class="nav-number">5.</span> <span class="nav-text">资源高效化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源文档"><span class="nav-number">5.1.</span> <span class="nav-text">资源文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标上色"><span class="nav-number">5.2.</span> <span class="nav-text">图标上色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化切图"><span class="nav-number">5.3.</span> <span class="nav-text">优化切图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等比设计"><span class="nav-number">5.4.</span> <span class="nav-text">等比设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于倍图的思考"><span class="nav-number">5.5.</span> <span class="nav-text">关于倍图的思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">6.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">姚力玮</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/yaoliwei/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/yaoliwei/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/yaoliwei/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/yaoliwei/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/yaoliwei/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
